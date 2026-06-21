@@ -1,0 +1,936 @@
+{
+  "users": [
+    {
+      "id": "user_0nhq2j7",
+      "createdAt": "2026-06-20T05:34:27.129Z",
+      "name": "anjali tiwari ",
+      "email": "anjalitiwarii566@gmail.com",
+      "password": "$2b$10$QBnhezHxi5my6iPcPE7S7enhm72ffArYm7eUvCUTgKOr0PHsmmk3i",
+      "role": "USER"
+    }
+  ],
+  "scans": [
+    {
+      "id": "scan_vss1w68",
+      "uploadDate": "2026-06-20T05:51:02.699Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "fr_env (2).zip",
+      "threatScore": 13,
+      "riskLevel": "Safe",
+      "report": {
+        "id": "rep_8d2t01d",
+        "scanId": "scan_vss1w68",
+        "permissions": [
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          }
+        ],
+        "behaviors": [],
+        "recommendations": [
+          "Monitor package installations and run standard verification checks."
+        ],
+        "explanation": "The application \"fr_env (2).zip\" exhibits typical features of a standard mobile package. Its requested permission profile consists of non-destructive system calls and regular background receivers. Threat score assessment indicates minimal malicious potential.",
+        "threatIntel": {
+          "family": "Generic.Android.Adware",
+          "confidence": 35,
+          "matchPattern": "Signature matches standard packaging templates."
+        }
+      }
+    },
+    {
+      "id": "scan_6072y7f",
+      "uploadDate": "2026-06-21T03:04:00.123Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Fraud-Detection_Environment-main.zip",
+      "threatScore": 13,
+      "riskLevel": "Safe",
+      "report": {
+        "id": "rep_gy7dwov",
+        "scanId": "scan_6072y7f",
+        "permissions": [
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          }
+        ],
+        "behaviors": [],
+        "recommendations": [
+          "Monitor package installations and run standard verification checks."
+        ],
+        "explanation": "The application \"Fraud-Detection_Environment-main.zip\" exhibits typical features of a standard mobile package. Its requested permission profile consists of non-destructive system calls and regular background receivers. Threat score assessment indicates minimal malicious potential.",
+        "threatIntel": {
+          "family": "Generic.Android.Adware",
+          "confidence": 35,
+          "matchPattern": "Signature matches standard packaging templates."
+        }
+      }
+    },
+    {
+      "id": "scan_gihjtan",
+      "uploadDate": "2026-06-21T05:17:34.227Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Subway+Surfers_3.64.10_APKPure.apk",
+      "threatScore": 100,
+      "riskLevel": "Critical",
+      "report": {
+        "id": "rep_no7p2uh",
+        "scanId": "scan_gihjtan",
+        "permissions": [
+          {
+            "name": "READ_PHONE_STATE",
+            "dangerous": true,
+            "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+          },
+          {
+            "name": "ACCESS_FINE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access precise location from GPS or network location providers."
+          },
+          {
+            "name": "ACCESS_COARSE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+          },
+          {
+            "name": "READ_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to read files from external storage."
+          },
+          {
+            "name": "SYSTEM_ALERT_WINDOW",
+            "dangerous": true,
+            "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+          },
+          {
+            "name": "RECEIVE_BOOT_COMPLETED",
+            "dangerous": false,
+            "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+          },
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          },
+          {
+            "name": "WRITE_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+          }
+        ],
+        "behaviors": [
+          {
+            "name": "Raw Socket Socket Connection",
+            "category": "Network Activity",
+            "severity": "MEDIUM",
+            "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+          },
+          {
+            "name": "Accessibility Service Abuse",
+            "category": "Evasion & Control",
+            "severity": "CRITICAL",
+            "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+          },
+          {
+            "name": "Dynamic Code Loading (DCL)",
+            "category": "Evasion",
+            "severity": "HIGH",
+            "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+          }
+        ],
+        "recommendations": [
+          "Disable Accessibility Service bindings for this app in Settings.",
+          "Enable real-time keystroke monitoring to prevent overlay login injection.",
+          "Audit app storage read/write queries and protect file assets.",
+          "Isolate this application bundle in an isolated sandbox or container before execution."
+        ],
+        "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+        "threatIntel": {
+          "family": "Trojan.Android.Cerberus",
+          "confidence": 94,
+          "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+        }
+      }
+    },
+    {
+      "id": "scan_kzw3bwy",
+      "uploadDate": "2026-06-21T05:37:05.147Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Subway+Surfers_3.64.10_APKPure.apk",
+      "threatScore": 100,
+      "riskLevel": "Critical",
+      "report": {
+        "id": "rep_zdrd7pv",
+        "scanId": "scan_kzw3bwy",
+        "permissions": [
+          {
+            "name": "READ_PHONE_STATE",
+            "dangerous": true,
+            "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+          },
+          {
+            "name": "ACCESS_FINE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access precise location from GPS or network location providers."
+          },
+          {
+            "name": "ACCESS_COARSE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+          },
+          {
+            "name": "READ_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to read files from external storage."
+          },
+          {
+            "name": "SYSTEM_ALERT_WINDOW",
+            "dangerous": true,
+            "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+          },
+          {
+            "name": "RECEIVE_BOOT_COMPLETED",
+            "dangerous": false,
+            "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+          },
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          },
+          {
+            "name": "WRITE_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+          }
+        ],
+        "behaviors": [
+          {
+            "name": "Raw Socket Socket Connection",
+            "category": "Network Activity",
+            "severity": "MEDIUM",
+            "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+          },
+          {
+            "name": "Accessibility Service Abuse",
+            "category": "Evasion & Control",
+            "severity": "CRITICAL",
+            "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+          },
+          {
+            "name": "Dynamic Code Loading (DCL)",
+            "category": "Evasion",
+            "severity": "HIGH",
+            "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+          }
+        ],
+        "recommendations": [
+          "Disable Accessibility Service bindings for this app in Settings.",
+          "Enable real-time keystroke monitoring to prevent overlay login injection.",
+          "Audit app storage read/write queries and protect file assets.",
+          "Isolate this application bundle in an isolated sandbox or container before execution."
+        ],
+        "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+        "threatIntel": {
+          "family": "Trojan.Android.Cerberus",
+          "confidence": 94,
+          "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+        }
+      }
+    },
+    {
+      "id": "scan_tahs4rw",
+      "uploadDate": "2026-06-21T05:49:59.530Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Subway+Surfers_3.64.10_APKPure.apk",
+      "threatScore": 100,
+      "riskLevel": "Critical",
+      "report": {
+        "id": "rep_2ugg7pl",
+        "scanId": "scan_tahs4rw",
+        "permissions": [
+          {
+            "name": "READ_PHONE_STATE",
+            "dangerous": true,
+            "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+          },
+          {
+            "name": "ACCESS_FINE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access precise location from GPS or network location providers."
+          },
+          {
+            "name": "ACCESS_COARSE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+          },
+          {
+            "name": "READ_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to read files from external storage."
+          },
+          {
+            "name": "SYSTEM_ALERT_WINDOW",
+            "dangerous": true,
+            "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+          },
+          {
+            "name": "RECEIVE_BOOT_COMPLETED",
+            "dangerous": false,
+            "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+          },
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          },
+          {
+            "name": "WRITE_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+          }
+        ],
+        "behaviors": [
+          {
+            "name": "Raw Socket Socket Connection",
+            "category": "Network Activity",
+            "severity": "MEDIUM",
+            "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+          },
+          {
+            "name": "Accessibility Service Abuse",
+            "category": "Evasion & Control",
+            "severity": "CRITICAL",
+            "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+          },
+          {
+            "name": "Dynamic Code Loading (DCL)",
+            "category": "Evasion",
+            "severity": "HIGH",
+            "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+          }
+        ],
+        "recommendations": [
+          "Disable Accessibility Service bindings for this app in Settings.",
+          "Enable real-time keystroke monitoring to prevent overlay login injection.",
+          "Audit app storage read/write queries and protect file assets.",
+          "Isolate this application bundle in an isolated sandbox or container before execution."
+        ],
+        "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+        "threatIntel": {
+          "family": "Trojan.Android.Cerberus",
+          "confidence": 94,
+          "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+        }
+      }
+    },
+    {
+      "id": "scan_5ogngb9",
+      "uploadDate": "2026-06-21T06:02:42.476Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Subway+Surfers_3.64.10_APKPure.apk",
+      "threatScore": 100,
+      "riskLevel": "Critical",
+      "report": {
+        "id": "rep_zxb0tc1",
+        "scanId": "scan_5ogngb9",
+        "permissions": [
+          {
+            "name": "READ_PHONE_STATE",
+            "dangerous": true,
+            "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+          },
+          {
+            "name": "ACCESS_FINE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access precise location from GPS or network location providers."
+          },
+          {
+            "name": "ACCESS_COARSE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+          },
+          {
+            "name": "READ_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to read files from external storage."
+          },
+          {
+            "name": "SYSTEM_ALERT_WINDOW",
+            "dangerous": true,
+            "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+          },
+          {
+            "name": "RECEIVE_BOOT_COMPLETED",
+            "dangerous": false,
+            "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+          },
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          },
+          {
+            "name": "WRITE_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+          }
+        ],
+        "behaviors": [
+          {
+            "name": "Raw Socket Socket Connection",
+            "category": "Network Activity",
+            "severity": "MEDIUM",
+            "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+          },
+          {
+            "name": "Accessibility Service Abuse",
+            "category": "Evasion & Control",
+            "severity": "CRITICAL",
+            "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+          },
+          {
+            "name": "Dynamic Code Loading (DCL)",
+            "category": "Evasion",
+            "severity": "HIGH",
+            "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+          }
+        ],
+        "recommendations": [
+          "Disable Accessibility Service bindings for this app in Settings.",
+          "Enable real-time keystroke monitoring to prevent overlay login injection.",
+          "Audit app storage read/write queries and protect file assets.",
+          "Isolate this application bundle in an isolated sandbox or container before execution."
+        ],
+        "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+        "threatIntel": {
+          "family": "Trojan.Android.Cerberus",
+          "confidence": 94,
+          "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+        }
+      }
+    },
+    {
+      "id": "scan_apppuzj",
+      "uploadDate": "2026-06-21T06:41:36.520Z",
+      "userId": "user_0nhq2j7",
+      "apkName": "Subway+Surfers_3.64.10_APKPure.apk",
+      "threatScore": 100,
+      "riskLevel": "Critical",
+      "report": {
+        "id": "rep_fk853zf",
+        "scanId": "scan_apppuzj",
+        "permissions": [
+          {
+            "name": "READ_PHONE_STATE",
+            "dangerous": true,
+            "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+          },
+          {
+            "name": "ACCESS_FINE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access precise location from GPS or network location providers."
+          },
+          {
+            "name": "ACCESS_COARSE_LOCATION",
+            "dangerous": true,
+            "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+          },
+          {
+            "name": "READ_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to read files from external storage."
+          },
+          {
+            "name": "SYSTEM_ALERT_WINDOW",
+            "dangerous": true,
+            "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+          },
+          {
+            "name": "RECEIVE_BOOT_COMPLETED",
+            "dangerous": false,
+            "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+          },
+          {
+            "name": "INTERNET",
+            "dangerous": false,
+            "explanation": "Allows the application to create network sockets and use custom network protocols."
+          },
+          {
+            "name": "WRITE_EXTERNAL_STORAGE",
+            "dangerous": true,
+            "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+          }
+        ],
+        "behaviors": [
+          {
+            "name": "Raw Socket Socket Connection",
+            "category": "Network Activity",
+            "severity": "MEDIUM",
+            "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+          },
+          {
+            "name": "Accessibility Service Abuse",
+            "category": "Evasion & Control",
+            "severity": "CRITICAL",
+            "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+          },
+          {
+            "name": "Dynamic Code Loading (DCL)",
+            "category": "Evasion",
+            "severity": "HIGH",
+            "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+          }
+        ],
+        "recommendations": [
+          "Disable Accessibility Service bindings for this app in Settings.",
+          "Enable real-time keystroke monitoring to prevent overlay login injection.",
+          "Audit app storage read/write queries and protect file assets.",
+          "Isolate this application bundle in an isolated sandbox or container before execution."
+        ],
+        "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+        "threatIntel": {
+          "family": "Trojan.Android.Cerberus",
+          "confidence": 94,
+          "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+        }
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep_8d2t01d",
+      "scanId": "scan_vss1w68",
+      "permissions": [
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        }
+      ],
+      "behaviors": [],
+      "recommendations": [
+        "Monitor package installations and run standard verification checks."
+      ],
+      "explanation": "The application \"fr_env (2).zip\" exhibits typical features of a standard mobile package. Its requested permission profile consists of non-destructive system calls and regular background receivers. Threat score assessment indicates minimal malicious potential.",
+      "threatIntel": {
+        "family": "Generic.Android.Adware",
+        "confidence": 35,
+        "matchPattern": "Signature matches standard packaging templates."
+      }
+    },
+    {
+      "id": "rep_gy7dwov",
+      "scanId": "scan_6072y7f",
+      "permissions": [
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        }
+      ],
+      "behaviors": [],
+      "recommendations": [
+        "Monitor package installations and run standard verification checks."
+      ],
+      "explanation": "The application \"Fraud-Detection_Environment-main.zip\" exhibits typical features of a standard mobile package. Its requested permission profile consists of non-destructive system calls and regular background receivers. Threat score assessment indicates minimal malicious potential.",
+      "threatIntel": {
+        "family": "Generic.Android.Adware",
+        "confidence": 35,
+        "matchPattern": "Signature matches standard packaging templates."
+      }
+    },
+    {
+      "id": "rep_no7p2uh",
+      "scanId": "scan_gihjtan",
+      "permissions": [
+        {
+          "name": "READ_PHONE_STATE",
+          "dangerous": true,
+          "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+        },
+        {
+          "name": "ACCESS_FINE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access precise location from GPS or network location providers."
+        },
+        {
+          "name": "ACCESS_COARSE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+        },
+        {
+          "name": "READ_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to read files from external storage."
+        },
+        {
+          "name": "SYSTEM_ALERT_WINDOW",
+          "dangerous": true,
+          "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+        },
+        {
+          "name": "RECEIVE_BOOT_COMPLETED",
+          "dangerous": false,
+          "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+        },
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        },
+        {
+          "name": "WRITE_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Raw Socket Socket Connection",
+          "category": "Network Activity",
+          "severity": "MEDIUM",
+          "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+        },
+        {
+          "name": "Accessibility Service Abuse",
+          "category": "Evasion & Control",
+          "severity": "CRITICAL",
+          "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+        },
+        {
+          "name": "Dynamic Code Loading (DCL)",
+          "category": "Evasion",
+          "severity": "HIGH",
+          "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+        }
+      ],
+      "recommendations": [
+        "Disable Accessibility Service bindings for this app in Settings.",
+        "Enable real-time keystroke monitoring to prevent overlay login injection.",
+        "Audit app storage read/write queries and protect file assets.",
+        "Isolate this application bundle in an isolated sandbox or container before execution."
+      ],
+      "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+      "threatIntel": {
+        "family": "Trojan.Android.Cerberus",
+        "confidence": 94,
+        "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+      }
+    },
+    {
+      "id": "rep_zdrd7pv",
+      "scanId": "scan_kzw3bwy",
+      "permissions": [
+        {
+          "name": "READ_PHONE_STATE",
+          "dangerous": true,
+          "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+        },
+        {
+          "name": "ACCESS_FINE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access precise location from GPS or network location providers."
+        },
+        {
+          "name": "ACCESS_COARSE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+        },
+        {
+          "name": "READ_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to read files from external storage."
+        },
+        {
+          "name": "SYSTEM_ALERT_WINDOW",
+          "dangerous": true,
+          "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+        },
+        {
+          "name": "RECEIVE_BOOT_COMPLETED",
+          "dangerous": false,
+          "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+        },
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        },
+        {
+          "name": "WRITE_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Raw Socket Socket Connection",
+          "category": "Network Activity",
+          "severity": "MEDIUM",
+          "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+        },
+        {
+          "name": "Accessibility Service Abuse",
+          "category": "Evasion & Control",
+          "severity": "CRITICAL",
+          "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+        },
+        {
+          "name": "Dynamic Code Loading (DCL)",
+          "category": "Evasion",
+          "severity": "HIGH",
+          "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+        }
+      ],
+      "recommendations": [
+        "Disable Accessibility Service bindings for this app in Settings.",
+        "Enable real-time keystroke monitoring to prevent overlay login injection.",
+        "Audit app storage read/write queries and protect file assets.",
+        "Isolate this application bundle in an isolated sandbox or container before execution."
+      ],
+      "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+      "threatIntel": {
+        "family": "Trojan.Android.Cerberus",
+        "confidence": 94,
+        "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+      }
+    },
+    {
+      "id": "rep_2ugg7pl",
+      "scanId": "scan_tahs4rw",
+      "permissions": [
+        {
+          "name": "READ_PHONE_STATE",
+          "dangerous": true,
+          "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+        },
+        {
+          "name": "ACCESS_FINE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access precise location from GPS or network location providers."
+        },
+        {
+          "name": "ACCESS_COARSE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+        },
+        {
+          "name": "READ_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to read files from external storage."
+        },
+        {
+          "name": "SYSTEM_ALERT_WINDOW",
+          "dangerous": true,
+          "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+        },
+        {
+          "name": "RECEIVE_BOOT_COMPLETED",
+          "dangerous": false,
+          "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+        },
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        },
+        {
+          "name": "WRITE_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Raw Socket Socket Connection",
+          "category": "Network Activity",
+          "severity": "MEDIUM",
+          "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+        },
+        {
+          "name": "Accessibility Service Abuse",
+          "category": "Evasion & Control",
+          "severity": "CRITICAL",
+          "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+        },
+        {
+          "name": "Dynamic Code Loading (DCL)",
+          "category": "Evasion",
+          "severity": "HIGH",
+          "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+        }
+      ],
+      "recommendations": [
+        "Disable Accessibility Service bindings for this app in Settings.",
+        "Enable real-time keystroke monitoring to prevent overlay login injection.",
+        "Audit app storage read/write queries and protect file assets.",
+        "Isolate this application bundle in an isolated sandbox or container before execution."
+      ],
+      "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+      "threatIntel": {
+        "family": "Trojan.Android.Cerberus",
+        "confidence": 94,
+        "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+      }
+    },
+    {
+      "id": "rep_zxb0tc1",
+      "scanId": "scan_5ogngb9",
+      "permissions": [
+        {
+          "name": "READ_PHONE_STATE",
+          "dangerous": true,
+          "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+        },
+        {
+          "name": "ACCESS_FINE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access precise location from GPS or network location providers."
+        },
+        {
+          "name": "ACCESS_COARSE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+        },
+        {
+          "name": "READ_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to read files from external storage."
+        },
+        {
+          "name": "SYSTEM_ALERT_WINDOW",
+          "dangerous": true,
+          "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+        },
+        {
+          "name": "RECEIVE_BOOT_COMPLETED",
+          "dangerous": false,
+          "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+        },
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        },
+        {
+          "name": "WRITE_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Raw Socket Socket Connection",
+          "category": "Network Activity",
+          "severity": "MEDIUM",
+          "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+        },
+        {
+          "name": "Accessibility Service Abuse",
+          "category": "Evasion & Control",
+          "severity": "CRITICAL",
+          "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+        },
+        {
+          "name": "Dynamic Code Loading (DCL)",
+          "category": "Evasion",
+          "severity": "HIGH",
+          "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+        }
+      ],
+      "recommendations": [
+        "Disable Accessibility Service bindings for this app in Settings.",
+        "Enable real-time keystroke monitoring to prevent overlay login injection.",
+        "Audit app storage read/write queries and protect file assets.",
+        "Isolate this application bundle in an isolated sandbox or container before execution."
+      ],
+      "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+      "threatIntel": {
+        "family": "Trojan.Android.Cerberus",
+        "confidence": 94,
+        "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+      }
+    },
+    {
+      "id": "rep_fk853zf",
+      "scanId": "scan_apppuzj",
+      "permissions": [
+        {
+          "name": "READ_PHONE_STATE",
+          "dangerous": true,
+          "explanation": "Allows read-only access to phone state, including the current cellular network info, status of calls, and device IDs (IMEI/IMSI)."
+        },
+        {
+          "name": "ACCESS_FINE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access precise location from GPS or network location providers."
+        },
+        {
+          "name": "ACCESS_COARSE_LOCATION",
+          "dangerous": true,
+          "explanation": "Allows the app to access approximate location from network cell sites and Wi-Fi."
+        },
+        {
+          "name": "READ_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to read files from external storage."
+        },
+        {
+          "name": "SYSTEM_ALERT_WINDOW",
+          "dangerous": true,
+          "explanation": "Allows an app to display a screen overlay on top of other apps, commonly used by overlay Trojans to steal credentials."
+        },
+        {
+          "name": "RECEIVE_BOOT_COMPLETED",
+          "dangerous": false,
+          "explanation": "Allows the app to start background services as soon as the system finishes booting, ensuring persistence."
+        },
+        {
+          "name": "INTERNET",
+          "dangerous": false,
+          "explanation": "Allows the application to create network sockets and use custom network protocols."
+        },
+        {
+          "name": "WRITE_EXTERNAL_STORAGE",
+          "dangerous": true,
+          "explanation": "Allows the app to write or modify data stored on external storage (SD card)."
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Raw Socket Socket Connection",
+          "category": "Network Activity",
+          "severity": "MEDIUM",
+          "explanation": "Initiates direct TCP socket connections. Can be used for reverse shell, custom commands, or control servers."
+        },
+        {
+          "name": "Accessibility Service Abuse",
+          "category": "Evasion & Control",
+          "severity": "CRITICAL",
+          "explanation": "Declares or binds to an accessibility service, allowing screen scraping, keystroke capturing, and simulating user gestures."
+        },
+        {
+          "name": "Dynamic Code Loading (DCL)",
+          "category": "Evasion",
+          "severity": "HIGH",
+          "explanation": "Loads executable classes dynamically at runtime. Used by malware to bypass static detection filters during store vetting."
+        }
+      ],
+      "recommendations": [
+        "Disable Accessibility Service bindings for this app in Settings.",
+        "Enable real-time keystroke monitoring to prevent overlay login injection.",
+        "Audit app storage read/write queries and protect file assets.",
+        "Isolate this application bundle in an isolated sandbox or container before execution."
+      ],
+      "explanation": "WARNING: Critical threat profile detected. The package requests permissions to capture Accessibility service messages (READ_PHONE_STATE, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_EXTERNAL_STORAGE, SYSTEM_ALERT_WINDOW, WRITE_EXTERNAL_STORAGE). In addition, static signature indicators expose dynamic code injection mechanisms matching known banking Trojan families, particularly \"Trojan.Android.Cerberus\". It presents immediate threats to user data and credentials.",
+      "threatIntel": {
+        "family": "Trojan.Android.Cerberus",
+        "confidence": 94,
+        "matchPattern": "Accessibility Service hijacking coupled with background SMS interception rules."
+      }
+    }
+  ]
+}

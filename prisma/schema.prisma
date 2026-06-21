@@ -1,0 +1,45 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  scans     Scan[]
+}
+
+model Scan {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  apkName     String
+  uploadDate  DateTime @default(now())
+  threatScore Int      // 0 - 100
+  riskLevel   String   // Safe, Low Risk, Medium Risk, High Risk, Critical
+  report      Report?
+}
+
+model Report {
+  id              String   @id @default(uuid())
+  scanId          String   @unique
+  scan            Scan     @relation(fields: [scanId], references: [id], onDelete: Cascade)
+  permissions     Json     // Array of object: { name: string, dangerous: boolean, explanation: string }
+  behaviors       Json     // Array of object: { name: string, category: string, severity: string, explanation: string }
+  recommendations Json     // Array of string
+  explanation     String   // Explanatory AI summary paragraphs
+  threatIntel     Json     // Object: { family: string, confidence: number, matchPattern: string }
+}
